@@ -23,9 +23,11 @@ Note: The build system uses [**premake4**](https://premake.github.io/download.ht
 
 ### Linux/Unix:  
 
-  1. ```.\premake4_linux gmake```
+  1. ```./premake4_linux gmake```
       - make sure you are in the ./ directory.
-  2. ```make config=[debug64|release64]```
+  2. ```make config=debug64```
+  	or
+  	```make config=release64```
       - Depending on your preference for the type of build you want to perform you can build a debug version or a release version.
   4. All components are copied into the [x64|x32]/[Debug|Release]/ and lib/ directories.
   
@@ -33,9 +35,11 @@ Note: The build system uses [**premake4**](https://premake.github.io/download.ht
 ### Mac OS X:
   For now, the process is similar to Linux/Unix.  
   
-  1. ```.\premake4_macos gmake```
+  1. ```./premake4_macos gmake```
       - make sure you are in the ./ directory.
-  2. ```make config=[debug64|release64]```
+  2. ```make config=debug64```
+  	or
+  	```make config=release64```
       - Depending on your preference for the type of build you want to perform you can build a debug version or a release version.
   4. All components are copied into the [x64|x32]/[Debug|Release]/ and lib/ directories.
   
