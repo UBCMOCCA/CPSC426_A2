@@ -13,7 +13,7 @@ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libgl1-mesa-glx li
 ```
 This will install opengl, glew and freegult.  
 
-On Windows you will need to download freeglut.lib and the opengl header files and put them in your library path, tyically C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\lib\amd64 for freeglut.lib and C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include for the GL folder.
+On Windows you will need to download freeglut.lib and the opengl header files and put them in your library path, tyically C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\lib\amd64 for freeglut.lib and C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include for the GL folder. Then "instal" glew following [**these instrunctions**](http://glew.sourceforge.net/install.html).
 Note: The build system uses [**premake4**](https://premake.github.io/download.html). You are going to need this available on your system in order to generate the build files. It has already been included in these files so you shouldn't need to download them.
 
 ### Windows 7/8/10 with Visual Studio 2012/2013/2015:
