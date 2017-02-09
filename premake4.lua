@@ -145,15 +145,6 @@ project "CPSC426"
 
 	-- linux library cflags and libs
 	configuration { "linux", "gmake" }
-		buildoptions { 
-			"`pkg-config --cflags gl`",
-			"`pkg-config --cflags glu`" 
-		}
-		linkoptions { 
-			"-Wl,-rpath," .. path.getabsolute("lib") ,
-			"`pkg-config --libs gl`",
-			"`pkg-config --libs glu`" 
-		}
 		libdirs { 
 			-- "lib",
 		}
@@ -164,6 +155,8 @@ project "CPSC426"
 			"Xxf86vm",
 			"Xinerama",
 			"Xcursor",
+			"GL",
+			"GLU",
 		}
 		
 		includedirs { 
@@ -272,15 +265,6 @@ project "cpsc426Util"
 	-- linux library cflags and libs
 	configuration { "linux", "gmake" }
 		targetdir ( "./lib" )
-		buildoptions { 
-			"`pkg-config --cflags gl`",
-			"`pkg-config --cflags glu`" 
-		}
-		linkoptions { 
-			"-Wl,-rpath," .. path.getabsolute("lib") ,
-			"`pkg-config --libs gl`",
-			"`pkg-config --libs glu`" 
-		}
 		libdirs { 
 			-- "lib",
 		}
@@ -404,15 +388,6 @@ project "cpsc426Scenario"
 	-- linux library cflags and libs
 	configuration { "linux", "gmake" }
 		targetdir ( "./lib" )
-		buildoptions { 
-			"`pkg-config --cflags gl`",
-			"`pkg-config --cflags glu`" 
-		}
-		linkoptions { 
-			"-Wl,-rpath," .. path.getabsolute("lib") ,
-			"`pkg-config --libs gl`",
-			"`pkg-config --libs glu`" 
-		}
 		libdirs { 
 			-- "lib",
 		}
@@ -428,6 +403,8 @@ project "cpsc426Scenario"
 			links {
 				"dl",
 				"pthread",
+				"GL",
+				"GLU",
 			}
 	 
 	 	-- release configs
@@ -436,6 +413,8 @@ project "cpsc426Scenario"
 			links {
 				"dl",
 				"pthread",
+				"GL",
+				"GLU",
 			}
 
 	-- windows library cflags and libs
@@ -544,15 +523,6 @@ project "cpsc426Render"
 	-- linux library cflags and libs
 	configuration { "linux", "gmake" }
 		targetdir ( "./lib" )
-		buildoptions { 
-			"`pkg-config --cflags gl`",
-			"`pkg-config --cflags glu`" 
-		}
-		linkoptions { 
-			"-Wl,-rpath," .. path.getabsolute("lib") ,
-			"`pkg-config --libs gl`",
-			"`pkg-config --libs glu`" 
-		}
 		libdirs { 
 			-- "lib",
 		}
@@ -568,6 +538,8 @@ project "cpsc426Render"
 			links {
 				"dl",
 				"pthread",
+				"GLU",
+				"GL",
 			}
 	 
 	 	-- release configs
@@ -576,6 +548,8 @@ project "cpsc426Render"
 			links {
 				"dl",
 				"pthread",
+				"GLU",
+				"GL",
 			}
 
 	-- windows library cflags and libs
@@ -781,15 +755,6 @@ project "nanoGUI"
 	configuration { "linux", "gmake" }
 
 		targetdir ( "./lib" )
-		buildoptions { 
-			"`pkg-config --cflags gl`",
-			"`pkg-config --cflags glu`" 
-		}
-		linkoptions { 
-			"-Wl,-rpath," .. path.getabsolute("lib") ,
-			"`pkg-config --libs gl`",
-			"`pkg-config --libs glu`" 
-		}
 		libdirs { 
 			-- "lib",
 		}
@@ -805,6 +770,8 @@ project "nanoGUI"
 				"X11",
 				"dl",
 				"pthread",
+				"GL",
+				"GLU",
 			}
 	 
 	 	-- release configs
@@ -814,6 +781,8 @@ project "nanoGUI"
 				"X11",
 				"dl",
 				"pthread",
+				"GL",
+				"GLU",
 			}
 
 	-- windows library cflags and libs
@@ -917,15 +886,6 @@ project "nanovg"
 	configuration { "linux", "gmake" }
 
 		targetdir ( "./lib" )
-		buildoptions { 
-			"`pkg-config --cflags gl`",
-			"`pkg-config --cflags glu`" 
-		}
-		linkoptions { 
-			"-Wl,-rpath," .. path.getabsolute("lib") ,
-			"`pkg-config --libs gl`",
-			"`pkg-config --libs glu`" 
-		}
 		libdirs { 
 			-- "lib",
 		}
@@ -941,6 +901,8 @@ project "nanovg"
 				"X11",
 				"dl",
 				"pthread",
+				"GL",
+				"GLU",
 			}
 	 
 	 	-- release configs
@@ -950,6 +912,8 @@ project "nanovg"
 				"X11",
 				"dl",
 				"pthread",
+				"GL",
+				"GLU",
 			}
 
 	-- windows library cflags and libs
@@ -1057,13 +1021,13 @@ project "glfw"
 			"Xi",
 			-- "gl",
 			"Xcursor",
+			"GL",
+			"GLU",
 		}
 
         
         buildoptions { 
 			"-pthread",
-			"`pkg-config --cflags gl`",
-			"`pkg-config --cflags glu`",  
 			"-fPIC",
 		}
        
